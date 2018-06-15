@@ -7,5 +7,5 @@ export class NoteServices {
     {id:2, title:'Nota 2', description:'Description note 2'},
     {id:3, title:'Nota 3', description:'Description note 3'}];
 
-    public getNotess(){ return this.notes; }
+    public getNotes(){ return this.notes; }
 }

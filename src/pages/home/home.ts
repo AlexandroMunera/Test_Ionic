@@ -8,9 +8,9 @@ import { NoteServices } from '../../services/note.service';
 })
 export class HomePage {
 
-  
+  notes = [];
   constructor(public navCtrl: NavController, public noteServices : NoteServices) {
-    
+    this.notes = noteServices.getNotes();
   }
 
 }
