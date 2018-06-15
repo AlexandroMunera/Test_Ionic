@@ -12,7 +12,26 @@
 
 </ion-header>
 
-
 <ion-content padding>
+
+    <ion-list>
+
+        <ion-item>
+          <ion-label floating>Title</ion-label>
+          <ion-input type="text" [(ngModel)] = "note.title"></ion-input>
+        </ion-item>
+      
+        <ion-item>
+          <ion-label floating>Description</ion-label>
+          <ion-textarea [(ngModel)] = "note.description"></ion-textarea>
+        </ion-item>
+
+        <div padding>
+            <button ion-button block>Save</button>
+            <button ion-button block color="danger">Delete Note</button>
+        </div>
+        
+      
+      </ion-list>
 
 </ion-content>
