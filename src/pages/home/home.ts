@@ -8,12 +8,9 @@ import { DetailPage } from '../detail/detail';
   templateUrl: 'home.html'
 })
 export class HomePage {
-
   notes = [];
   @ViewChild('myNav') nav: NavController;
-  
   constructor(public navCtrl: NavController, public noteServices : NoteServices) {
-    // this.notes = noteServices.getNotes();
     noteServices.getNotes()
       .subscribe(notas => {
         this.notes = notas;
@@ -21,10 +18,8 @@ export class HomePage {
   }
 
   public goToDetail(id){
-
     this.navCtrl.push(DetailPage, {id:id});
   }
-
   public createNote(){
     this.navCtrl.push(DetailPage, {id:0});
   }

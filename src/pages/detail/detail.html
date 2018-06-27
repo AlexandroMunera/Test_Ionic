@@ -7,20 +7,20 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>detail</ion-title>
+    <ion-title>Detail</ion-title>
   </ion-navbar>
 
 </ion-header>
 
-<ion-content padding>
 
-    <ion-list>
+<ion-content *ngIf="note">
+  <ion-list>
 
         <ion-item>
           <ion-label floating>Title</ion-label>
           <ion-input type="text" [(ngModel)] = "note.title"></ion-input>
         </ion-item>
-      
+              
         <ion-item>
           <ion-label floating>Description</ion-label>
           <ion-textarea [(ngModel)] = "note.description"></ion-textarea>

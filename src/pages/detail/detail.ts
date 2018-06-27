@@ -19,7 +19,7 @@ export class DetailPage {
 
  
   id = null;
-  note:any = [{id:null, title:null, description:null}];
+  note:any = {id:null, title:null, description:null};
   textSaveOrUpdate:string = "Save";
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public noteServices : NoteServices,private alertCtrl: AlertController) {
@@ -31,7 +31,14 @@ export class DetailPage {
     }else{
       this.textSaveOrUpdate = "Update";
     }
-    this.note = noteServices.getNote(this.id);
+
+    //this.note = noteServices.getNote(this.id);
+    if (this.id != 0) {
+      noteServices.getNote(this.id)
+        .subscribe(nota => {
+          this.note = nota;
+        });
+    }
 
   }
 
@@ -52,6 +59,7 @@ export class DetailPage {
 
     } else {
       this.note.id = Date.now();
+      console.log(this.note);
       this.noteServices.createNote(this.note);
 
       let alert = this.alertCtrl.create({

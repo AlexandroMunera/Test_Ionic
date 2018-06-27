@@ -21,6 +21,14 @@ export const firebaseConfig = {
   messagingSenderId: '286504266601'
 };
 
+// export const firebaseConfig = {
+//   apiKey: "AIzaSyACamruAxuMwwdBTnsOkNE5knT7BPJ_USE",
+//   authDomain: "primerionic-d8568.firebaseapp.com",
+//   databaseURL: "https://primerionic-d8568.firebaseio.com",
+//   storageBucket: "primerionic-d8568.appspot.com",
+//   messagingSenderId: '535362437999'
+// };
+
 @NgModule({
   declarations: [
     MyApp,
@@ -38,7 +46,7 @@ export const firebaseConfig = {
   entryComponents: [
     MyApp,
     HomePage,
-    DetailPage,
+    DetailPage
   ],
   providers: [
     StatusBar,
